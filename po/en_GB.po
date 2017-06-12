@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015 pdf2img
+# This file is distributed under the same license as the pdf2img package.
+# <wifiextender@bitmessage.ch>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdf2img\n"
+"Report-Msgid-Bugs-To: <wifiextender@bitmessage.ch>\n"
+"POT-Creation-Date: 2015-01-03 19:17+0100\n"
+"PO-Revision-Date: 2015-01-03 19:20+0100\n"
+"Last-Translator: <wifiextender@bitmessage.ch>\n"
+"Language-Team: <wifiextender@bitmessage.ch>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "DPI Resolution"
+msgstr "DPI Resolution"
+
+msgid "WARNING !"
+msgstr "WARNING !"
+
+msgid "Select PDF file"
+msgstr "Select PDF file"
+
+msgid "About"
+msgstr "About"
+
+msgid "From page:"
+msgstr "From page:"
+
+msgid "Image format"
+msgstr "Image format"
+
+msgid "sDevice"
+msgstr "sDevice"
+
+msgid "To:"
+msgstr "To:"
+
+msgid "Click here"
+msgstr "Click here"
+
+msgid "Reversed Numbers"
+msgstr "Reversed Numbers"
+
+msgid "\"From page\" cannot be\ngreater than \"To\""
+msgstr "\"From page\" cannot be\ngreater than \"To\""
+
+msgid "Hold on cowboy!"
+msgstr "Hold on cowboy!"
+
+msgid "You cannot leave\nthe \"Resolution\" empty"
+msgstr "You cannot leave\nthe \"Resolution\" empty"
+
+msgid "Please remove \"%s\""
+msgstr "Please remove \"%s\""
+
+msgid "You are about to exceed the\nfilesystem limits, please shorten\nthe PDF filename."
+msgstr "You are about to exceed the\nfilesystem limits, please shorten\nthe PDF filename."
+
+msgid "Official letter:"
+msgstr "Official letter:"
+
+msgid "PDF Filter"
+msgstr "PDF Filter"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Convert"
+msgstr "Convert"
+
+msgid "Antialiasing"
+msgstr "Antialiasing"
+
+msgid "GS Transparency"
+msgstr "GS Transparency"
+
+msgid "PDF to IMG"
+msgstr "PDF to IMG"
+
+msgid "Developers website"
+msgstr "Developers website"
+
+msgid "Convert easily PDF to multiple images\nin various formats with a single mouse click"
+msgstr "Convert easily PDF to multiple images\nin various formats with a single mouse click"
+
+msgid "The given filename is over 1900\ncharacters long ?!"
+msgstr "The given filename is over 1900\ncharacters long ?!"

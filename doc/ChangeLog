@@ -1,0 +1,58 @@
+10/07/2017 - Merged everything in main.c instead splitting the code on modules.
+
+17/01/2015 - Added support for custom css, so you can choose
+                        how the program will be decorated.
+
+14/01/2015 - Now the converted images will be nested in folder
+                        named according to the given `filename'.
+
+10/01/2015 - Combined the following files in 'bootstrap':
+                        Makefile.am, configurue.ac, *.desktop.in,
+                        POTFILES.in, the program icon was
+                        converted to xpm, added `man' page.
+
+09/01/2015 - Bug fixed: Long story short:
+                        Currently active sDevice item - tiffgray, now the
+                        user selects jpeggray, but the sDevice 'combobox'
+                        is reset to the first jpeg item - jpeg.
+                        The bug was affecting all sDevices.
+
+09/01/2015 - Bug fixed: The 'resolution_has_nums' function didn't
+                        checked if the "DPI Resolution" entry is empty.
+
+03/01/2015 - Added internationalization, please submit
+                        your *.po translations.
+
+01/01/2015 - Added function that detects if the "DPI Resolution" entry
+                        has members other than numbers.
+
+25/12/2014 - Improved conversion speed, thankfully to the "banding params"
+                        the old gs params was converting 50 pages
+                        for 47 seconds, with the new one for 39 seconds.
+
+24/12/2014 - Added "Transparency" switch to control the
+                        ghostscript -dNOTRANSPARENCY rendering parameter.
+
+24/12/2014 - Added "Antialising" combobox to control the
+                        subsample antialising.
+
+20/12/2014 - Prevented bug: The given `filename' may exceed
+                        the predefined char array size.
+
+20/12/2014 - Added one more icon
+
+18/12/2014 - Now you can choose between having images on buttons or not
+
+18/12/2014 - Bug fixed: 'File Chooser Dialog' mapped without parent
+
+18/12/2014 - Bug fixed: Gtk-CRITICAL ** child failed
+
+# Thank you Aaditya Bagga for catching this one
+17/12/2014 - Bug fixed: Converting lesser PDF pages than the
+                        requested, e.g: from page 7 to 14
+                        and converts only the pages starting from 10 until 14
+                        If 'from' was 1 and 'to' 14, it worked flawlessly
+
+17/12/2014 - Bug fixed: 'About dialog' mapped without parent
+
+16/12/2014 - Initial release

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=PDF to IMG
+Comment="Convert PDF books to PNG, JPG and other image formats easily"
+Exec=@prefix@/bin/pdf2img
+Icon=@prefix@/@DATADIRNAME@/pixmaps/pdf2img_c_icon.xpm
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Graphics;
