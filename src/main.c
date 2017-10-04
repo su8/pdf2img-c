@@ -44,7 +44,7 @@ size_t index_last_sep(const char *str);
 /* gtk related classes */
 GtkWidget *window, *spinbutton1, *spinbutton2, *about_label, *sdev_combo;
 GtkWidget *entry, *alias_combo, *trans_switch, *image_combo;
-char last_pdf[5000];
+char last_pdf[VLA+1];
 
 int main(int argc, char *argv[]) {
 
@@ -316,7 +316,7 @@ void on_button1_clicked(void) {
 
   if (GTK_RESPONSE_ACCEPT == gtk_dialog_run(GTK_DIALOG(chooser_dialog))) {
     filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(chooser_dialog));
-    snprintf(last_pdf, 4999, "%s", filename);
+    snprintf(last_pdf, VLA, "%s", filename);
     pdf_to_img(filename);
   }
   gtk_widget_destroy(chooser_dialog);
@@ -350,8 +350,8 @@ void RaiseWarning(const char *str_to_warn1, const char *str_to_warn2) {
 */
 void pdf_to_img(const char *filename) {
   char *im_combo = gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(image_combo));
-  char pdfname[5000], BaseName[5000], params[5000];
-  char ren1[5000], ren2[5000], created_dir[5000];
+  char pdfname[VLA+1], BaseName[VLA+1], params[VLA+1];
+  char ren1[VLA+1], ren2[VLA+1], created_dir[VLA+1];
   int spin1 = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(spinbutton1));
   int spin2 = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(spinbutton2));
   int small_range = (spin2 - spin1) + 2, big_range = spin1, y = 0;
@@ -365,7 +365,7 @@ void pdf_to_img(const char *filename) {
     return;
   }
 
-  snprintf(pdfname, 4999, "%s", filename);
+  snprintf(pdfname, VLA, "%s", filename);
 
   for (z = 0, x = dirname_len+1; x < fit2; x++, z++)
     BaseName[z] = pdfname[x]; /* /path/to/some.pdf -> some      */
@@ -376,13 +376,13 @@ void pdf_to_img(const char *filename) {
     return;
   }
 
-  snprintf(created_dir, 4999, "%s converted", pdfname);
+  snprintf(created_dir, VLA, "%s converted", pdfname);
   stat(created_dir, &DiR);
   if (0 == S_ISDIR(DiR.st_mode)) {
     mkdir(created_dir, 0700);
   }
 
-  snprintf(params, 4999, "gs -dBATCH -dNOPAUSE -dQUIET -dFirstPage=%d -dLastPage=%d "
+  snprintf(params, VLA, "gs -dBATCH -dNOPAUSE -dQUIET -dFirstPage=%d -dLastPage=%d "
                   "-sOutputFile=\"%s\"_pAge_%%01d.%s -sDEVICE=%s -r%d "
                   "-dGraphicsAlphaBits=%s -sBandListStorage=memory "
                   "-dBufferSpace=99000 -dNumRenderingThreads=1 %s\"%s\"",
@@ -394,8 +394,8 @@ void pdf_to_img(const char *filename) {
   system(params);
 
   for (y = 1; y < small_range; y++, big_range++) {
-    snprintf(ren1, 4999, "%s_pAge_%d.%s", pdfname, y, im_combo);
-    snprintf(ren2, 4999, "%s/%s_page_%d.%s", created_dir, BaseName, big_range, im_combo);
+    snprintf(ren1, VLA, "%s_pAge_%d.%s", pdfname, y, im_combo);
+    snprintf(ren2, VLA, "%s/%s_page_%d.%s", created_dir, BaseName, big_range, im_combo);
     rename(ren1, ren2);
   }
 }

@@ -21,6 +21,7 @@
 #ifndef MY_CONSTANTS_H_
 #define MY_CONSTANTS_H_
 
+#define VLA 4999
 #define POSITION_LEFT 1
 #define POSITION_RIGHT 2
 #define POSITION_CENTER 2
