@@ -34,6 +34,7 @@
 #define SDEVICE_LBL "sDevice"
 #define TO_LBL "To:"
 #define BUTTONE_LBL "Click here"
+#define REUSE_LAST_PDF "Re-use the last pdf"
 #define REVERSED "Reversed Numbers"
 #define EMPTY_RES_TITLE "Hold on cowboy!"
 #define EMPTY_RES_BODY "You cannot leave\nthe \"Resolution\" empty"

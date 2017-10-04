@@ -90,3 +90,6 @@ msgstr "Convert easily PDF to multiple images\nin various formats with a single 
 
 msgid "The given filename is over 1900\ncharacters long ?!"
 msgstr "The given filename is over 1900\ncharacters long ?!"
+
+msgid "Re-use the last pdf"
+msgstr "Re-use the last pdf"

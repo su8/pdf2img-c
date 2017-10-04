@@ -36,13 +36,15 @@ void on_image_combo(void);
 void on_sdevice_combo(void);
 void on_about_clicked(void);
 void on_button1_clicked(void);
+void on_button2_clicked(void);
 void pdf_to_img(const char *filename);
 void RaiseWarning(const char *str_to_warn1, const char *str_to_warn2);
 size_t index_last_sep(const char *str);
 
 /* gtk related classes */
 GtkWidget *window, *spinbutton1, *spinbutton2, *about_label, *sdev_combo;
-GtkWidget *entry, *button1, *alias_combo, *trans_switch, *image_combo;
+GtkWidget *entry, *alias_combo, *trans_switch, *image_combo;
+char last_pdf[5000];
 
 int main(int argc, char *argv[]) {
 
@@ -56,6 +58,7 @@ int main(int argc, char *argv[]) {
 
   GtkWidget *from_label, *to_label, *button1_lbl, *about_button, *expand1;
   GtkWidget *image_label, *sdevice_lbl, *expand2, *grid, *entry_label;
+  GtkWidget *button1, *button2, *button2_lbl;
 
   gtk_init(&argc, &argv);
 
@@ -170,11 +173,25 @@ int main(int argc, char *argv[]) {
   g_signal_connect(G_OBJECT(button1), "clicked", G_CALLBACK(on_button1_clicked), NULL);
   gtk_grid_attach(GTK_GRID(grid), button1, POSITION_LEFT, 10, POSITION_CENTER, 1);
 
+  button2_lbl  = gtk_label_new(_(REUSE_LAST_PDF));
+  gtk_grid_attach(GTK_GRID(grid), button2_lbl, POSITION_LEFT, 11, POSITION_CENTER, 1);
+
+  button2      = gtk_button_new_with_label(_(BUTTONE_LBL));
+  g_signal_connect(G_OBJECT(button2), "clicked", G_CALLBACK(on_button2_clicked), NULL);
+  gtk_grid_attach(GTK_GRID(grid), button2, POSITION_LEFT, 12, POSITION_CENTER, 1);
+
   g_signal_connect(G_OBJECT(window), "destroy", G_CALLBACK(gtk_main_quit), NULL);
   gtk_widget_show_all(window);
   gtk_main();
 
   return EXIT_SUCCESS;
+}
+
+/* Re-use the last converted pdf */
+void on_button2_clicked(void) {
+  if (*last_pdf) {
+    pdf_to_img(last_pdf);
+  }
 }
 
 
@@ -299,6 +316,7 @@ void on_button1_clicked(void) {
 
   if (GTK_RESPONSE_ACCEPT == gtk_dialog_run(GTK_DIALOG(chooser_dialog))) {
     filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(chooser_dialog));
+    snprintf(last_pdf, 4999, "%s", filename);
     pdf_to_img(filename);
   }
   gtk_widget_destroy(chooser_dialog);
