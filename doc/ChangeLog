@@ -1,6 +1,6 @@
 10/04/2018 - Added a new button to re-use the last used pdf, so the user
-												doesn't have to select the same file with the file
-												browser.
+			doesn't have to select the same file with the file
+			browser.
 
 10/07/2017 - Merged everything in main.c instead splitting the code on modules.
 
