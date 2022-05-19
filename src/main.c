@@ -364,6 +364,10 @@ void pdf_to_img(const char *filename) {
     RaiseWarning(_(JOKE), _(FILENAME_TOO_LONG));
     return;
   }
+  if (spin1 > spin2) {
+    RaiseWarning(_(REVERSED), _(REVERSED_BODY));
+    return;
+  }
 
   snprintf(pdfname, VLA, "%s", filename);
 
