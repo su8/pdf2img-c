@@ -44,7 +44,7 @@ size_t index_last_sep(const char *str);
 /* gtk related classes */
 GtkWidget *window, *spinbutton1, *spinbutton2, *about_label, *sdev_combo;
 GtkWidget *entry, *alias_combo, *trans_switch, *image_combo;
-char last_pdf[VLA+1];
+char last_pdf[VLA+1] = {'\0'};
 
 int main(int argc, char *argv[]) {
 
