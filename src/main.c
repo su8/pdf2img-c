@@ -92,7 +92,7 @@ int main(int argc, char *argv[]) {
   /* gtk_entry_set_width_chars(GTK_ENTRY(entry), 1); */
   /* gtk_entry_set_text(GTK_ENTRY(entry), RESOLUTION_NUM); */
   /* gtk_entry_set_max_length(GTK_ENTRY(entry), 4); */
-  entry        = gtk_spin_button_new_with_range(100, 9999, 1);
+  entry        = gtk_spin_button_new_with_range(1, 9999, 1);
   gtk_grid_attach(GTK_GRID(grid), entry, POSITION_LEFT, 2, 1, 1);
 
   if (SHOW_IMAGES_ON_BUTTONS) {
